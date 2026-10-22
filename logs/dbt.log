@@ -56,3 +56,18 @@ Runtime Error
 [0m22:29:46.385154 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C127C8E520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C128CBCCB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C127B27020>]}
 [0m22:29:46.385838 [debug] [MainThread]: Flushing usage events
 [0m22:29:47.004484 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:26:28.415273 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000177E74881A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000177E9383ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000177E9383890>]}
+
+
+============================== 11:26:28.435327 | 8edae1a9-f97c-4658-9f8e-cfb2fbed7807 ==============================
+[0m11:26:28.435327 [info ] [MainThread]: Running with dbt=1.11.7
+[0m11:26:28.435872 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\qorba\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt test -s dim_listings_cleansed.sql', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m11:26:28.436335 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Manto\DBT COURSE\repo\course\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m11:26:28.437538 [debug] [MainThread]: Command `dbt test` failed at 11:26:28.437400 after 0.20 seconds
+[0m11:26:28.437873 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000177E937E8B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000177E92556D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000177E91D7AC0>]}
+[0m11:26:28.438204 [debug] [MainThread]: Flushing usage events
+[0m11:26:29.269445 [debug] [MainThread]: An error was encountered while trying to flush usage events

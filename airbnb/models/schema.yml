@@ -1,25 +1,10 @@
 models:
-  # - name: dim_hosts_cleansed
-  #   columns:
-  #     - name: host_id
-  #       data_tests:
-  #         - not_null
-  #         - unique
-  #         - relationships:
-  #             arguments:
-  #               to: ref('dim_listings_leansed')
-  #               field: host_id
-  #     - name: host_name
-  #       data_tests:
-  #         - not_null
-
-  #     - name: is_superhost
-  #       data_tests:
-  #         - accepted_values:
-  #             arguments:
-  #               values: ['t', 'f']
-
   - name: dim_listings_cleansed
+    data_tests:
+      - minimum_row_count:
+          arguments:
+            min_row_count: 1000
+          severity: error   
     columns:
       - name: listing_id
         data_tests:
@@ -46,15 +31,34 @@ models:
   - name: dim_hosts_cleansed
     config:
       contract:
-        enforced: true
+        enforced: true   
     columns:
       - name: host_id
         data_type: integer
+        constraints:
+          - type: not_null
+        data_tests:
+          - unique
+
+      
       - name: host_name
         data_type: string
+        constraints:
+          - type: not_null
+      
       - name: is_superhost
-        data_type: string 
+        data_type: string
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['t', 'f']
+
       - name: updated_at
         data_type: timestamp
+
       - name: created_at
         data_type: timestamp
+  
+      # - name: minimum_nights
+      #   data_tests:
+      #    - positive_values
